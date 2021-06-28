@@ -5,7 +5,6 @@ from prophet import Prophet
 app = Flask(__name__)
 
 
-# http://127.0.0.1:5000/api?days=2
 @app.route('/confirmed_cases', methods=['POST','GET'])
 def predict():
     days = int(request.args.get('days'))
@@ -32,4 +31,4 @@ def predict():
     return result
 
 if __name__ == '__main__':
-    app.run(port = 5000, debug=True)
+    app.run()
